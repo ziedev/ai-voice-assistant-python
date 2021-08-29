@@ -5,3 +5,4 @@ pyautogui
 pyjokes
 pipwin
 SpeechRecognition
+pyttsx3
