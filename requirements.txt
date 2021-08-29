@@ -1,0 +1,7 @@
+pillow
+wikipedia
+psutil
+pyautogui
+pyjokes
+pipwin
+SpeechRecognition
