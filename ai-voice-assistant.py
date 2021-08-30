@@ -11,7 +11,7 @@ import pyjokes #pip install pyjokes
 
 engine = pyttsx3.init() 
 voices = engine.getProperty("voices")
-engine.setProperty("voice",voices[1].id) # Choose the Gneder voice (Male or Female) 0 for male and 1 for female
+engine.setProperty("voice",voices[0].id) # Choose the Gneder voice (Male or Female) 0 for male and 1 for female
 newVoiceRate = 150
 engine.setProperty("rate",newVoiceRate) # newVoiceRate is the speech speed
 def speak(audio):
@@ -117,6 +117,11 @@ if __name__ == "__main__":
             songsFolder = "C:/Users/zimaa/Desktop/Music" #Your Music Directory
             songs = os.listdir(songsFolder)
             os.startfile(os.path.join(songsFolder,songs[0]))
+        elif "how are you" in query:
+            speak("Fine Thank You , and what about You ?")
+        elif "woman" in query:
+            engine.setProperty("voice",voices[1].id)
+            speak("Yes I m Heer , how can i help you ?")
         elif "remember that" in query:
             speak("What should i Remeber ?")
             data = takeCommand() #Remember Order
@@ -127,7 +132,7 @@ if __name__ == "__main__":
             f.close()
         elif "do you know anything" in query:
             #Read remember from data.txt
-            file1 = open('data.txt', 'a')
+            file1 = open('data.txt', 'r')
             Lines = file1.readlines()
             count = 0
             speak("You said me to remember that ")
